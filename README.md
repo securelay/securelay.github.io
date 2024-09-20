@@ -16,7 +16,7 @@ Securelay works in two ways.:
 
 **CORS:** Allowing CORS is a must. Otherwise, browsers would block client side calls to the API.
 
-**Futureproof:** The URL of the API endpoint may be found with a GET at https://securelay.github.io/api.
+**Futureproof:** The URL(s) of the API endpoint(s) may be found with a GET at https://securelay.github.io/api-endpoints.json.
 
 # Security
 Security is brought about by the use of dual paths, one private and the other public. Note here that other relay services like [piping-server](https://github.com/nwtgck/piping-server), [http-relay](https://httprelay.io) or [pipeto.me](https://pipeto.me) use the same path for both GET and POST.
