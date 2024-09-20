@@ -6,11 +6,17 @@ Securelay was originally conceptualized for [EasyForm](https://github.com/Somaji
 
 # How it works
 
+**Duality:**
+
 Securelay works in two ways.:
 1. Aggregator mode: Many can POST (or publish) to a public path for only one to GET (or subscribe) at a private path. This may be useful for aggregating HTML form data from one's users.
 2. Key-Value Store mode: Only one can POST (or pub) to a private path for many to GET (or sub) at a public path. See security section below for a significant usecase. In addition to the one-to-many relay, there can also be one-to-one relay if path is suffixed with a uid query parameter. That is to say, when one POSTs to `https://api.securelay.tld/private_path?uid=<uid>`, there can be only one GET consumer at `https://api.securelay.tld/public_path?uid=<uid>`, after which any more GET at that path would result in a 404 error. This is useful for sending a separate response to each POSTer.
 
-POST(s) and GET(s) can be concurrent. If not, POSTed data is stored until next GET. However, if no GET appears within a certain time-window, the POSTed data is deleted. Hence, Securelay is *ephemeral*, if not storageless.
+**Ephemeral:** POST(s) and GET(s) can be concurrent. If not, POSTed data is stored until next GET. However, if no GET appears within a certain time-window, the POSTed data is deleted. Hence, Securelay is *ephemeral*, if not storageless.
+
+**CORS:** Allowing CORS is a must. Otherwise, browsers would block client side calls to the API.
+
+**Futureproof:** The URL of the API endpoint may be found with a GET at https://securelay.github.io/api.
 
 # Security
 Security is brought about by the use of dual paths, one private and the other public. Note here that other relay services like [piping-server](https://github.com/nwtgck/piping-server), [http-relay](https://httprelay.io) or [pipeto.me](https://pipeto.me) use the same path for both GET and POST.
