@@ -37,6 +37,8 @@ One exciting feature is the `?verify=<email>` parameter when requesting the path
 
 There is more. One can POST his cryptographic public key at his private_path for his users to consume at the corresponding public_path. His users then POST to the public_path as application/base64 their data encrypted with that public key for him to decrypt upon a subsequent GET at the private_path. This ensures the relay is end-to-end encrypted, not even the Securelay server can read user data.
 
+Note that in all the above securelay doesn't require an any API key for protecting data. The private path itself serves as one. Data can be overwritten only by the owner of the private path.
+
 # Limits
 To mitigate abuse, the API accepts only two enctype modes. Securelay validates the data to see it is only of these two types.
 1. application/x-www-form-urlencoded. Securelay parses data into JSON to validate and returns as application/json on GET.
@@ -47,6 +49,15 @@ It also accepts POSTs only if they have Content-Length less than a strict size-l
 Another limit is imposed on how long POSTed data persists.
 
 Requests to all private paths are heavily rate-limited, say, at max 1 request per minute.
+
+# Use cases
+- Forms
+- Comments
+- Chats
+- PubSub
+- Dynamic Key Value Store
+- Single click URL shortener
+- Configuration sharing between microservices
 
 # Possible Implementation
 
@@ -61,3 +72,7 @@ Set expiry by using `const uid = settimeout(delete(filepath), timeWindow)`. If f
 Perhaps a good way to use lock in npm:fs is using callback function with async [fs.mkdir](https://nodejs.org/api/fs.html#fsmkdirpath-options-callback). The callback simply is a closure containing the data to append to the path. Callback also deletes the dir upon completion, thus releasing the lock.
 
 Use fs.watch with callback for executing the callback whenever a file changes. [Here](https://thisdavej.com/how-to-watch-for-file-changes-in-node-js/) is the way. Use md5 hash or debounce (timeout delays) if need be as mentioned in the article.
+
+If using [fastify](https://fastify.dev/docs/latest/Guides/Getting-Started/), also use these plugins: [@fastify/cors](https://github.com/fastify/fastify-cors) and [@fastify/form-body](https://github.com/fastify/fastify-formbody).
+
+If an in memory scheduler is required, use [toad-scheduler](https://github.com/kibertoad/toad-scheduler) and [@fastify/schedule](https://github.com/fastify/fastify-schedule).
