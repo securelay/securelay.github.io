@@ -63,7 +63,7 @@ Requests to all private paths are heavily rate-limited, say, at max 1 request pe
 
 Python using flask /fastapi. Or NodeJS using fastify.
 
-Host on Glitch or [alternatives](https://support.glitch.com/t/temporary-glitch-alternatives/26915) like Vercel. Or, self-host using ngrok exposure. If it can be hosted on ready-to-deploy services like Glitch for free, then anybody can host - resulting in much needed redundancy. Provide as nvm/pypi package or docker for the willing ones to self-host.
+Host on Glitch or [alternatives](https://support.glitch.com/t/temporary-glitch-alternatives/26915) like Vercel or Deno. Or, self-host using ngrok exposure. If it can be hosted on ready-to-deploy services like Glitch for free, then anybody can host - resulting in much needed redundancy. Provide as nvm/pypi package or docker for the willing ones to self-host.
 
 NodeJS notes
 ---
