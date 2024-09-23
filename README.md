@@ -18,7 +18,7 @@ Securelay works in the following ways:
 
 **CORS:** Allowing CORS is a must. Otherwise, browsers would block client side calls to the API. So securelay server replies with the HEADER- `Access-Control-Allow-Origin: *`
 
-**Futureproof:** The URL(s) of the API endpoint(s) may be found with a GET at https://cdn.jsdelivr.net/gh/securelay/api/endpoints.json courtesy of [jsdelivr](https://www.jsdelivr.com/?docs=gh). This requires storing the list of URLs in JSON format in a endpoints.json file in the https://github.com/securelay/api repository. 
+**Futureproof:** The URL(s) of the API endpoint(s) may be found with a GET at https://cdn.jsdelivr.net/gh/securelay/api/endpoints.json courtesy of [jsdelivr](https://www.jsdelivr.com/?docs=gh). So it acts as a sort of dynamic DNS. This requires storing the list of URLs in minified JSON format in a endpoints.json file in the https://github.com/securelay/api repository. The format is `[{"<id>":["<url1>","<url2>", ...]}...]` where `<id>` is unique for a database. i.e. if two separate endpoints `url1` and `url2` share the same database, then a POST at `url1` maybe retrieved with a GET at `url2`. so those URLs are interchangeable, may be used for load balancing.
 
 # Security
 Security is brought about by the use of dual paths, one private and the other public. Note here that other relay services like [piping-server](https://github.com/nwtgck/piping-server), [http-relay](https://httprelay.io) or [pipeto.me](https://pipeto.me) use the same path for both GET and POST.
@@ -48,7 +48,7 @@ It also accepts POSTs only if they have Content-Length less than a strict size-l
 
 Another limit is imposed on how long POSTed data persists.
 
-Requests to all private paths are heavily rate-limited, say, at max 1 request per minute.
+Requests to all private paths are heavily rate-limited, say, at max 60 requests per minute. After a certain number of 429 responses 403 bans are imposed. [404s are also rate limited](https://github.com/fastify/fastify-rate-limit?tab=readme-ov-file#preventing-guessing-of-urls-through-404s).
 
 # Use cases
 - Forms
@@ -56,6 +56,7 @@ Requests to all private paths are heavily rate-limited, say, at max 1 request pe
 - Chats
 - PubSub
 - Dynamic Key Value Store
+- Dynamic DNS
 - Single click URL shortener
 - Configuration sharing between microservices
 
