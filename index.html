@@ -8,18 +8,23 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="p-5 text-bg-primary text-center">
+            <header class="container-fluid p-5 text-bg-primary text-center">
                 <h1>Welcome to Securelay</h1>
-            </div>
-            <div class="text-bg-light pt-2 pb-4">
-                <ul class="nav nav-pills nav-justified mb-4">
+            </header>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+                <ul class="navbar nav">
                     <li class="nav-item"><a class="nav-link" href="https://github.com/securelay/specs#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://github.com/securelay/specs#use-cases">Use cases</a></li>
                     <li class="nav-item"><a class="nav-link" href="/api">REST API</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://github.com/securelay/specs#model-implementations">Self-hosting</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://github.com/securelay/specs">Specifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/securelay/specs#security">Privacy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ToS.txt">Terms</a></li>
                 </ul>
+            </nav>
+        <div class="container-fluid">
+            <div class="text-bg-light pt-2 pb-4">
                 <p>Securelay is an open-source, feature-rich, secure and ephemeral http-relay for small data, with a REST API. Read full specifications <a href="https://github.com/securelay/specs">here</a>.</p>
                 <p>
                   The <a href="https://github.com/securelay">securelay organization</a>, as a non-profit, hosts public <a href="/api/endpoints.json">endpoint(s)</a> for non-commercial, individual use and trial or testing purposes. No payment, credit-card details or even email ID is required for using those endpoints.
@@ -36,14 +41,12 @@
                 
                 <p>
                   <strong>Contribute:</strong>
-                  This project is sustained by contributions from users like you. Contributions may be made in the form of sponsorships, feedback (bug-reports, feature-requests) and PRs (code, documentation) or simply by spreading the word about this project. If you are a cloud-provider, you can help us scale by providing us your PaaS for free. <a href="./contact.html">Contact us</a> for details.
+                  This project is sustained by contributions from users like you. Contributions may be made in the form of sponsorships, feedback (bug-reports, feature-requests) and PRs (code, documentation), or simply by spreading the word about this project. If you are a cloud-provider, you can help us scale by providing us your PaaS for free. <a href="./contact.html">Contact us</a> if you want to help.
                 </p>
             </div>
-                <ul class="nav nav-pills nav-justified">
-                    <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/securelay/specs#security">Privacy</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ToS.txt">Terms</a></li>
-                </ul>
-        </div>        
+        </div>      
+        <footer class="mt-auto container-fluid p-2 text-bg-dark text-center sticky-bottom">
+            <a class="navbar-dark nav-link" href="https://github.com/securelay">Copyright &copy; 2025 Securelay</a>
+        </footer>
     </body>
 </html>
