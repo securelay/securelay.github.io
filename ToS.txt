@@ -4,7 +4,7 @@ TERMS OF SERVICE
 TL;DR
 -----
 
-Use this service at your own risk. No warranty, express or implied, is provided. The developers and maintainers of this service and their associates disclaim all liability for any damage or loss arising from, out of or in connection with the service or the use or other dealings in the service. If reported for unacceptable usage, you may be banned.
+Use this service at your own risk. No warranty, express or implied, is provided. The developers and maintainers of this service and their associates disclaim all liability for any damage or loss arising from, out of or in connection with the service or the use or other dealings in the service. If reported for unacceptable usage, you may be banned. Data published with this service belongs to public domain.
 
 Definitions
 -----------
@@ -14,6 +14,14 @@ The quoted terms below are case-insensitive.
 * "US" or "WE" refers to the members of and contributors to the Securelay organization or its affiliates.
 * "AGREEMENT" or "TERMS" refers, collectively, to all the terms, conditions, notices contained or referenced in this document (the "Terms of Service") and all other operating rules, policies and procedures that we may publish from time to time on our Website at https://securelay.github.io.
 * "YOU" or "USER" refers to the individual person, company, or organization that has visited or is using the Service.
+* "THIRD PARTY" refers to anybody who is not a member of or cannot be referred to as "YOU" or "US".
+* "POST PRIVATELY" refers to sending data to a Securelay endpoint using a POST or PUT http-method authorized with a private key or access-token.
+* "PUBLICATION" refers to making data accessible by using a public key.
+
+Copyright waiver
+----------------
+
+You waive copyright on or ownership of any data that you post privately for publication, by adopting the CC0 1.0 Universal License (https://github.com/securelay/jsonbin/blob/main/LICENSE). Data upon publication, may be inspected by a third party, even without the public key.
 
 Our Warranties and Disclaimers
 ------------------------------
